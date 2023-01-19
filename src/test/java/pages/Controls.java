@@ -14,9 +14,9 @@ public class Controls {
     public static Label labelOnInput = new Label(By.xpath("//span[text()='Search by Hotel or City Name']"));
     public static Link lintToHotels = new Link(By.xpath("//div[text()=', United Arab Emirates']"));
     public static Button searchButton = new Button(By.xpath("//button[text()=' Search']"));
-    public static Button myCountButton = new Button(By.xpath("(//li[@id='li_myaccount'])[2]"));
-    public static Button singUpButton = new Button(By.xpath("(//a[text()='  Sign Up'])[last()]"));
-    public static Text nameOfHotel = new Text(By.xpath("//b[text()='Jumeirah Beach Hotel']"));
+    public static Button MY_COUNT_BUTTON = new Button(By.xpath("(//li[@id='li_myaccount'])[2]"));
+    public static Button SING_UP_BUTTON = new Button(By.xpath("(//a[text()='  Sign Up'])[last()]"));
+    public static Text NAME_OF_HOTEL = new Text(By.xpath("//b[text()='Jumeirah Beach Hotel']"));
     public static Text notResultsText = new Text(By.xpath("//div[@class='itemscontainer']//h2"));
 
     //SING UP PAGE
@@ -28,6 +28,6 @@ public class Controls {
     public static InputTextBox confirmPassword = new InputTextBox(By.xpath("//input[@placeholder='Confirm Password']"));
     public static InputTextBox confirmButton = new InputTextBox(By.xpath("//button[text()]//i"));
     public static Text text = new Text(By.xpath("//h4//strong[text()]"));
-    public static Text textAlert = new Text(By.xpath("//div[@class='resultsignup']"));
+    public static Text EMAIL_ALREADY_EXIST_TEXT = new Text(By.xpath("//div[@class='resultsignup']"));
     public static Text textAlert2 = new Text(By.xpath("//div//p[text()]"));
 }

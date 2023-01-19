@@ -12,8 +12,8 @@ public class SingUp extends BaseTest {
     public void sortNameOfHotels(){
         driver.get("http://www.kurs-selenium.pl/demo/");
 
-        myCountButton.clickOnElement();
-        singUpButton.clickOnElement();
+        MY_COUNT_BUTTON.click();
+        SING_UP_BUTTON.click();
         firstName.sendText("Adam");
         lastName.sendText("Nowak");
         mobileNumber.sendText("884 555 666");
@@ -22,7 +22,7 @@ public class SingUp extends BaseTest {
         email.sendText(pwd+"@wp.pl");
         password.sendText(pwd);
         confirmPassword.sendText(pwd);
-        confirmButton.clickOnElement();
+        confirmButton.click();
 
         Assert.assertEquals(text.getText(), "Nothing Booked Yet");
     }

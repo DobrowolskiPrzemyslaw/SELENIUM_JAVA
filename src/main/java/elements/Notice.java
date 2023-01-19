@@ -8,7 +8,7 @@ public class Notice extends BaseElements{
         super(locator);
     }
 
-    public String getTextNotice(){
+    public String getText(){
         return waitUnilPresentedBase().getText();
     }
 

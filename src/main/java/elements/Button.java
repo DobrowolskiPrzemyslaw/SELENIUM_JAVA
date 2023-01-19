@@ -8,7 +8,7 @@ public class Button extends BaseElements{
         super(locator);
     }
 
-    public void clickOnElement(){
+    public void click(){
         clickOnElementBase();
     }
 }

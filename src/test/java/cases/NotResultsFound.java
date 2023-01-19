@@ -14,10 +14,10 @@ public class NotResultsFound extends BaseTest {
 
         checkIn.sendText("19/01/2023");
         checkOut.sendText("19/01/2023");
-        checkPeople.clickOnElement();
+        checkPeople.click();
         adultInput.sendText("1");
         childInput.sendText("3");
-        searchButton.clickOnElement();
+        searchButton.click();
         Assert.assertEquals(notResultsText.isVisble(), true);
         Assert.assertEquals(notResultsText.getText(), "No Results Found");
     }

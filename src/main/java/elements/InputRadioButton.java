@@ -5,9 +5,8 @@ import org.openqa.selenium.WebElement;
 
 public class InputRadioButton extends BaseElements{
 
-    // Konstruktor dla obiektu klasy Button
     public InputRadioButton(By locator){
-        super(locator); // lokator został przekazany do klasy wyżej czyli BaseElements // locator jest potrzebny do odpowiedniego działania metod w klasie BaseElements
+        super(locator);
     }
 
     public void selectRadioButton() {

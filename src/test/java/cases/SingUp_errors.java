@@ -11,9 +11,9 @@ public class SingUp_errors extends BaseTest {
     public void sortNameOfHotels(){
         driver.get("http://www.kurs-selenium.pl/demo/");
 
-        myCountButton.clickOnElement();
-        singUpButton.clickOnElement();
-        confirmButton.clickOnElement();
+        MY_COUNT_BUTTON.click();
+        SING_UP_BUTTON.click();
+        confirmButton.click();
 
         Assert.assertEquals(textAlert2.isVisble(), true);
     }

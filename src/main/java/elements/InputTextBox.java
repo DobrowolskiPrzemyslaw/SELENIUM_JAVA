@@ -12,7 +12,7 @@ public class InputTextBox extends BaseElements {
         sendTextBase(text);
     }
 
-    public void clickOnElement(){
+    public void click(){
         clickOnElementBase();
     }
 }

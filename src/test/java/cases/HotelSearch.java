@@ -11,18 +11,17 @@ public class HotelSearch extends BaseTest {
     public void searchHotel(){
         driver.get("http://www.kurs-selenium.pl/demo/");
 
-        labelOnInput.clickOnElement();
+        labelOnInput.click();
         searchInputHotel.sendText("Dubai");
-        lintToHotels.clickOnLink();
+        lintToHotels.click();
         checkIn.sendText("19/01/2023");
         checkOut.sendText("19/01/2023");
-        checkPeople.clickOnElement();
+        checkPeople.click();
         adultInput.sendText("1");
         childInput.sendText("3");
-        searchButton.clickOnElement();
-        nameOfHotel.getText();
-        nameOfHotel.isVisble();
-        Assert.assertEquals(nameOfHotel.getText(), "Jumeirah Beach Hotel");
-        Assert.assertEquals(nameOfHotel.isVisble(), true);
+        searchButton.click();
+
+        Assert.assertEquals(NAME_OF_HOTEL.isVisble(), true);
+        Assert.assertEquals(NAME_OF_HOTEL.getText(), "Jumeirah Beach Hotel");
     }
 }
