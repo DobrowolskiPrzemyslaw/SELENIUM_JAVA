@@ -1,4 +1,6 @@
-import static pages.Homepage.*;
+package cases;
+
+import static pages.Controls.*;
 
 import base.BaseTest;
 import org.testng.Assert;

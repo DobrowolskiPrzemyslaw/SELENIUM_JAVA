@@ -1,3 +1,4 @@
+package cases;
 
 import base.BaseTest;
 import org.openqa.selenium.By;
@@ -5,7 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import java.util.List;
 import java.util.stream.Collectors;
-import static pages.Homepage.*;
+import static pages.Controls.*;
 
 public class HotelSearch_listOfNameHotels extends BaseTest {
 

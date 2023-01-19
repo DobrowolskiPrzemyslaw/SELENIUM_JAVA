@@ -1,9 +1,9 @@
+package cases;
+
 import base.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import static pages.SingUpPage.*;
-import static pages.Homepage.*;
-import static pages.SingUpPage.confirmButton;
+import static pages.Controls.*;
 
 public class SingUp_errors extends BaseTest {
 

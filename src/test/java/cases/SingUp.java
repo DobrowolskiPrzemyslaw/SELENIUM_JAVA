@@ -1,11 +1,12 @@
+package cases;
+
 import base.BaseTest;
 import org.apache.commons.lang.RandomStringUtils;
+import static pages.Controls.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import static pages.SingUpPage.*;
-import static pages.Homepage.*;
 
-public class SingUp_notWalidMail extends BaseTest {
+public class SingUp extends BaseTest {
 
     @Test
     public void sortNameOfHotels(){
@@ -16,13 +17,13 @@ public class SingUp_notWalidMail extends BaseTest {
         firstName.sendText("Adam");
         lastName.sendText("Nowak");
         mobileNumber.sendText("884 555 666");
-        String characters = "~`!@#$%^&*()-_=+[{]}\\|;:\'\",<.>/?";
+        String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
         String pwd = RandomStringUtils.random( 10, characters);
         email.sendText(pwd+"@wp.pl");
         password.sendText(pwd);
         confirmPassword.sendText(pwd);
         confirmButton.clickOnElement();
 
-        Assert.assertEquals(textAlert2.getText(), "The Email field must contain a valid email address.");
+        Assert.assertEquals(text.getText(), "Nothing Booked Yet");
     }
 }

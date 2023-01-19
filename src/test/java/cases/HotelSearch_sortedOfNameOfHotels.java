@@ -1,3 +1,4 @@
+package cases;
 
 import base.BaseTest;
 import helper.SeleniumHelper;
@@ -5,7 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import static pages.Homepage.*;
+import static pages.Controls.*;
 import java.util.List;
 
 public class HotelSearch_sortedOfNameOfHotels extends BaseTest {

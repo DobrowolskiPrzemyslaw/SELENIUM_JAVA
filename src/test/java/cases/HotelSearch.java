@@ -1,8 +1,9 @@
+package cases;
 
 import base.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.*;
-import static pages.Homepage.*;
+import static pages.Controls.*;
 
 public class HotelSearch extends BaseTest {
 
