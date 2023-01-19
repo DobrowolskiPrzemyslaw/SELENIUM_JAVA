@@ -37,6 +37,6 @@ public class SingUp extends BaseTest {
         confirmPassword.sendText(pwd);
         confirmButton.clickOnElement();
 
-        Assert.assertEquals(text.getText(), "Nothing Booked Yet ");
+        Assert.assertEquals(text.getText(), "Nothing Booked Yet");
     }
 }

@@ -34,6 +34,6 @@ public class SingUp_notWalidMail extends BaseTest {
         confirmPassword.sendText(pwd);
         confirmButton.clickOnElement();
 
-        Assert.assertEquals(textAlert.getText(), " The Email field must contain a valid email address. ");
+        Assert.assertEquals(textAlert.getText(), "The Email field must contain a valid email address.");
     }
 }
