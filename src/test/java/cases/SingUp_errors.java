@@ -13,8 +13,8 @@ public class SingUp_errors extends BaseTest {
 
         MY_COUNT_BUTTON.click();
         SING_UP_BUTTON.click();
-        confirmButton.click();
+        CONFIRM_BUTTON.click();
 
-        Assert.assertEquals(textAlert2.isVisble(), true);
+        Assert.assertEquals(TEXT_ALERT_2.isVisble(), true);
     }
 }

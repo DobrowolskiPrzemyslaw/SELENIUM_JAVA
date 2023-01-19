@@ -21,18 +21,6 @@ public class SeleniumHelper {
         return destinationFile.getAbsolutePath();
     }
 
-    @Deprecated
-    public static List<String> sortList(String pathOfList){
-        WebDriver driver = DriverManager.getDriver();
-        List<WebElement> list = driver.findElements(By.xpath(pathOfList));
-        ArrayList<String> slist = new ArrayList<>();
-        for (int i = 1; i <= list.size(); i++) {
-            String nazwa = driver.findElement(By.xpath("("+pathOfList+")["+i+"]")).getText();
-            slist.add(nazwa);
-        }
-        return slist.stream().sorted(Collections.reverseOrder()).collect(Collectors.toList());
-    }
-
     public static List<String> sortOfList(List<WebElement> list) {
 //        return list.stream().map(el -> el.getText()).sorted().collect(Collectors.toList());
         return list.stream().map(el -> el.getAttribute("textContent")).sorted().collect(Collectors.toList());

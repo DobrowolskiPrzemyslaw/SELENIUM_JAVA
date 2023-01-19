@@ -13,13 +13,13 @@ public class SingUp_emailAlreadyExists extends BaseTest {
 
         MY_COUNT_BUTTON.click();
         SING_UP_BUTTON.click();
-        firstName.sendText("Adam");
-        lastName.sendText("Nowak");
-        mobileNumber.sendText("884 555 666");
-        email.sendText("wp@wp.pl");
-        password.sendText("asdadaffafaq2345ty5t54t34tf");
-        confirmPassword.sendText("asdadaffafaq2345ty5t54t34tf");
-        confirmButton.click();
+        FIRST_NAME_INPUT.sendText("Adam");
+        LAST_NAME_INPUT.sendText("Nowak");
+        MOBLIE_NUMBER_INPUT.sendText("884 555 666");
+        EMAIL_INPUT.sendText("wp@wp.pl");
+        PASSWORD_INPUT.sendText("asdadaffafaq2345ty5t54t34tf");
+        CONFIRM_PASSWORD_INPUT.sendText("asdadaffafaq2345ty5t54t34tf");
+        CONFIRM_BUTTON.click();
 
         Assert.assertEquals(EMAIL_ALREADY_EXIST_TEXT.getText(), " Email Already Exists. ");
     }
