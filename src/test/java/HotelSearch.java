@@ -1,12 +1,8 @@
 
 import elements.InputTextBox;
+import elements.Link;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.*;
-
-import java.time.Duration;
 
 public class HotelSearch extends BaseTest {
 
@@ -14,9 +10,9 @@ public class HotelSearch extends BaseTest {
     public void searchHotel(){
         driver.get("http://www.kurs-selenium.pl/demo/");
         InputTextBox searchInputHotel = new InputTextBox(By.xpath("//span[text()='Search by Hotel or City Name']"));
+        Link lintToHotels = new Link(By.xpath("//div[text()=', United Arab Emirates']"));
+
         searchInputHotel.sendText("Dubai");
-
-        final By searchedHotel = By.xpath("//div[text()=', United Arab Emirates']");
-
+//        lintToHotels.clickOnLink();
     }
 }

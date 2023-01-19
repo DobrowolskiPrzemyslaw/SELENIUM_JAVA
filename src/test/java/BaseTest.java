@@ -1,21 +1,22 @@
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
+import driver.DriverManager;
 
 public class BaseTest {
     WebDriver driver;
 
     @BeforeTest
-    public void beforeTest(){
+    public void setUp(){
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+        DriverManager.createInstance("chrome");
+        driver = DriverManager.getDriver();
         driver.manage().window().maximize();
     }
 
     @AfterTest
-    public void afterTest(){
-
+    public void tearDown() {
+//        driver.close();
     }
 }
