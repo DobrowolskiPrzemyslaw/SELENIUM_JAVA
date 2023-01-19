@@ -1,15 +1,19 @@
+import driver.DriverManager;
 import elements.*;
 import helper.SeleniumHelper;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class HotelSearch_plusSortowanieNazwHoteli extends BaseTest {
+public class HotelSearch_sortedOfNameOfHotels extends BaseTest {
 
     @Test
-    public void searchHotel(){
+    public void sortNameOfHotels(){
         driver.get("http://www.kurs-selenium.pl/demo/");
         Label labelOnInput = new Label(By.xpath("//span[text()='Search by Hotel or City Name']"));
         InputTextBox searchInputHotel = new InputTextBox(By.xpath("//div[@id='select2-drop']//input"));
@@ -33,6 +37,12 @@ public class HotelSearch_plusSortowanieNazwHoteli extends BaseTest {
         searchButton.clickOnElement();
         nameOfHotel.isVisble();
 
-        SeleniumHelper.sortWebElements( "//h4[@class='RTL go-text-right mt0 mb4 list_title']").forEach(System.out::println);
+        List<WebElement> list = driver.findElements(By.xpath("//h4[@class='RTL go-text-right mt0 mb4 list_title']"));
+        List<String> sortedList = SeleniumHelper.sortOfList(list);
+        sortedList.forEach(System.out::println);
+        Assert.assertEquals(sortedList.get(0), "Hyatt Regency Perth");
+        Assert.assertEquals(sortedList.get(1), "Jumeirah Beach Hotel");
+        Assert.assertEquals(sortedList.get(2), "Oasis Beach Tower");
+        Assert.assertEquals(sortedList.get(3), "Rose Rayhaan Rotana");
     }
 }

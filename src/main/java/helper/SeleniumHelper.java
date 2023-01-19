@@ -21,15 +21,8 @@ public class SeleniumHelper {
         return destinationFile.getAbsolutePath();
     }
 
-    public static void waitFor(int ms){
-        try{
-            Thread.sleep(ms);
-        }catch (InterruptedException ex){
-            ex.printStackTrace();
-        }
-    }
-
-    public static List<String> sortWebElements(String pathOfList){
+    @Deprecated
+    public static List<String> sortList(String pathOfList){
         WebDriver driver = DriverManager.getDriver();
         List<WebElement> list = driver.findElements(By.xpath(pathOfList));
         ArrayList<String> slist = new ArrayList<>();
@@ -38,5 +31,20 @@ public class SeleniumHelper {
             slist.add(nazwa);
         }
         return slist.stream().sorted(Collections.reverseOrder()).collect(Collectors.toList());
+    }
+
+    public static List<String> sortOfList(List<WebElement> list) {
+//        return list.stream().map(el -> el.getText()).sorted().collect(Collectors.toList());
+        return list.stream().map(el -> el.getAttribute("textContent")).sorted().collect(Collectors.toList());
+    }
+
+    public static List<String> sortOfList(List<WebElement> list, Boolean reverse) {
+        List<String> returnList;
+        if (reverse){
+            returnList = list.stream().map(el -> el.getAttribute("textContent")).sorted(Collections.reverseOrder()).collect(Collectors.toList());
+        }else{
+            returnList = list.stream().map(el -> el.getAttribute("textContent")).sorted().collect(Collectors.toList());
+        }
+        return returnList;
     }
 }
