@@ -11,5 +11,9 @@ public class InputTextBox extends BaseElements {
     public void sendText(String text) {
         sendTextBase(text);
     }
+
+    public void clickOnElement(){
+        clickOnElementBase();
+    }
 }
 
