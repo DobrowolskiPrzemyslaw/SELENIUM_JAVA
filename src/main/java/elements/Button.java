@@ -2,7 +2,7 @@ package elements;
 
 import org.openqa.selenium.By;
 
-public class Button extends BaseElements{
+public class Button extends WebelementBase {
 
     public Button(By locator){
         super(locator);

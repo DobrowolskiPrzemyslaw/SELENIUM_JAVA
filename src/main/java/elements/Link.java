@@ -2,7 +2,7 @@ package elements;
 
 import org.openqa.selenium.By;
 
-public class Link extends BaseElements{
+public class Link extends WebelementBase {
 
     public Link(By locator){
         super(locator);

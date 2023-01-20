@@ -26,8 +26,8 @@ public class Controls {
     public static Input EMAIL_INPUT = new Input(By.xpath("//input[@placeholder='Email']"));
     public static Input PASSWORD_INPUT = new Input(By.xpath("//input[@placeholder='Password']"));
     public static Input CONFIRM_PASSWORD_INPUT= new Input(By.xpath("//input[@placeholder='Confirm Password']"));
-    public static Input CONFIRM_BUTTON = new Input(By.xpath("//button[text()]//i"));
-    public static Text TEXT_ALERT = new Text(By.xpath("//h4//strong[text()]"));
+    public static Button CONFIRM_BUTTON = new Button(By.xpath("//button[text()]//i"));
+    public static Text ALERT_TEXT = new Text(By.xpath("//h4//strong[text()]"));
     public static Text EMAIL_ALREADY_EXIST_TEXT = new Text(By.xpath("//div[@class='resultsignup']"));
-    public static Text TEXT_ALERT_2 = new Text(By.xpath("//div//p[text()]"));
+    public static Text ALERT_TEXT_2 = new Text(By.xpath("//div//p[text()]"));
 }

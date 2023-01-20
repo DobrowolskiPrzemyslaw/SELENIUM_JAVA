@@ -2,7 +2,7 @@ package elements;
 
 import org.openqa.selenium.By;
 
-public class Notice extends BaseElements{
+public class Notice extends WebelementBase {
 
     public Notice(By locator){
         super(locator);

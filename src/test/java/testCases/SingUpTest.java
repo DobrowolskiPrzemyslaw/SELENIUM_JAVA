@@ -16,7 +16,7 @@ public class SingUpTest extends BaseTest {
         SING_UP_BUTTON.click();
         CONFIRM_BUTTON.click();
 
-        Assert.assertEquals(TEXT_ALERT_2.isVisble(), true);
+        Assert.assertEquals(ALERT_TEXT_2.isVisble(), true);
     }
 
     @Test
@@ -35,7 +35,7 @@ public class SingUpTest extends BaseTest {
         CONFIRM_PASSWORD_INPUT.sendText(pwd);
         CONFIRM_BUTTON.click();
 
-        Assert.assertEquals(TEXT_ALERT.getText(), "Nothing Booked Yet");
+        Assert.assertEquals(ALERT_TEXT.getText(), "Nothing Booked Yet");
     }
 
     @Test
@@ -71,6 +71,6 @@ public class SingUpTest extends BaseTest {
         CONFIRM_PASSWORD_INPUT.sendText(pwd);
         CONFIRM_BUTTON.click();
 
-        Assert.assertEquals(TEXT_ALERT_2.getText(), "The Email field must contain a valid email address.");
+        Assert.assertEquals(ALERT_TEXT_2.getText(), "The Email field must contain a valid email address.");
     }
 }

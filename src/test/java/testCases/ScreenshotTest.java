@@ -2,7 +2,6 @@ package testCases;
 
 import base.BaseTest;
 import helper.SeleniumHelper;
-import org.apache.commons.lang.RandomStringUtils;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -20,7 +19,7 @@ public class ScreenshotTest extends BaseTest {
         SING_UP_BUTTON.click();
         CONFIRM_BUTTON.click();
 
-        Assert.assertEquals(TEXT_ALERT_2.isVisble(), true);
+        Assert.assertEquals(ALERT_TEXT_2.isVisble(), true);
         SeleniumHelper.takeScreenShot();
     }
 }

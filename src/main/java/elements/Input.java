@@ -2,7 +2,7 @@ package elements;
 
 import org.openqa.selenium.By;
 
-public class Input extends BaseElements {
+public class Input extends WebelementBase {
 
     public Input(By locator) {
         super(locator);
