@@ -2,9 +2,9 @@ package elements;
 
 import org.openqa.selenium.By;
 
-public class InputTextBox extends BaseElements {
+public class Input extends BaseElements {
 
-    public InputTextBox(By locator) {
+    public Input(By locator) {
         super(locator);
     }
 

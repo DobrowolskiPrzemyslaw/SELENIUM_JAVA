@@ -3,9 +3,9 @@ package elements;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public class InputRadioButton extends BaseElements{
+public class RadioButton extends BaseElements{
 
-    public InputRadioButton(By locator){
+    public RadioButton(By locator){
         super(locator);
     }
 

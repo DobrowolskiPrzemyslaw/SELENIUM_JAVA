@@ -2,9 +2,9 @@ package elements;
 
 import org.openqa.selenium.By;
 
-public class IFrameElement extends BaseElements{
+public class IFrame extends BaseElements{
 
-    public IFrameElement(By locator){
+    public IFrame(By locator){
         super(locator);
     }
 

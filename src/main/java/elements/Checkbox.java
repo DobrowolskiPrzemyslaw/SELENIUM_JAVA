@@ -2,27 +2,27 @@ package elements;
 
 import org.openqa.selenium.By;
 
-public class InputCheckbox extends BaseElements{
+public class Checkbox extends BaseElements{
 
-    public InputCheckbox(By locator){
+    public Checkbox(By locator){
         super(locator);
     }
 
-    public boolean isChecked(){
+    public boolean isSelected(){
         return isSelectedBase();
     }
 
-    public void uncheckbox(){
+    public void unSelect(){
         if (isSelectedBase())
            clickOnElementBase();
     }
 
-    public void checkbox() {
+    public void select() {
         if(!isSelectedBase())
             clickOnElementBase();
     }
 
-    public void checkUncheckCheckbox(boolean check) {
+    public void selectUnselect(boolean check) {
         if (check) {
             if (!isSelectedBase())
                 clickOnElementBase();
