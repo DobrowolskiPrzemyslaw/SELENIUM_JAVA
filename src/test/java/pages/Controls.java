@@ -17,7 +17,7 @@ public class Controls {
     public static Button MY_COUNT_BUTTON = new Button(By.xpath("(//li[@id='li_myaccount'])[2]"));
     public static Button SING_UP_BUTTON = new Button(By.xpath("(//a[text()='  Sign Up'])[last()]"));
     public static Text NAME_OF_HOTEL = new Text(By.xpath("//b[text()='Jumeirah Beach Hotel']"));
-    public static Text notResultsText = new Text(By.xpath("//div[@class='itemscontainer']//h2"));
+    public static Text NOT_RESULT_TEXT = new Text(By.xpath("//div[@class='itemscontainer']//h2"));
 
     //SING UP PAGE
     public static InputTextBox FIRST_NAME_INPUT = new InputTextBox(By.xpath("//input[@placeholder='First Name']"));
