@@ -1,6 +1,7 @@
 package helper;
 
 import driver.DriverManager;
+import org.jetbrains.annotations.NotNull;
 import org.openqa.selenium.*;
 import java.io.File;
 import java.io.IOException;
@@ -20,11 +21,11 @@ public class SeleniumHelper {
         Files.copy(screenshotFile.toPath(), destinationFile.toPath());
     }
 
-    public static List<String> sortOfList(List<WebElement> list) {
+    public static List<String> sortOfList(@NotNull List<WebElement> list) {
         return list.stream().map(el -> el.getAttribute("textContent")).sorted().collect(Collectors.toList());
     }
 
-    public static List<String> sortOfList(List<WebElement> list, Boolean reverse) {
+    public static List<String> sortOfList(List<WebElement> list, @NotNull Boolean reverse) {
         List<String> returnList;
         if (reverse){
             returnList = list.stream().map(el -> el.getAttribute("textContent")).sorted(Collections.reverseOrder()).collect(Collectors.toList());

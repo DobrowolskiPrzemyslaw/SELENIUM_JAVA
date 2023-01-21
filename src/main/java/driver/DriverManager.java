@@ -14,7 +14,7 @@ public class DriverManager {
         webDriver.set(driver);
     }
 
-    public static void createInstance(String browserName) {
+    public static void createInstance(WebBrowser browserName) {
         setWebDriver(DriverFactory.createWebDriverInstance(browserName));
     }
 }

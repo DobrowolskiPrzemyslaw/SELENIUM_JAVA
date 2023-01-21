@@ -2,19 +2,22 @@ package elements;
 
 import driver.DriverManager;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
-public class WebelementBase {
+public class WebElementBase {
     WebDriver driver = DriverManager.getDriver();
     WebDriverWait waitDriver = new WebDriverWait(driver, Duration.ofSeconds(10));
     By locator;
+    Actions actions = new Actions(driver);
 
-    protected WebelementBase(By locator) {
+    protected WebElementBase(By locator) {
         this.locator = locator;
     }
 
@@ -31,11 +34,13 @@ public class WebelementBase {
     }
 
     protected void sendTextBase(String text){
+        moveToElementBase();
         waitUnilVisibeBase().clear();
         waitUnilVisibeBase().sendKeys(text);
     }
 
     protected void clickOnElementBase(){
+        moveToElementBase();
         waitUnilVisibeBase().click();
     }
 
@@ -49,6 +54,15 @@ public class WebelementBase {
 
     protected boolean isSelectedBase (){
         return waitUnilVisibeBase().isSelected();
+    }
+
+    protected void moveToElementBase(){
+        try{
+            WebElement webElement = driver.findElement(locator);
+            actions.moveToElement(webElement).perform();
+        }catch (NoSuchElementException e) {
+            e.printStackTrace();
+        }
     }
 
     protected  void switchToFrameBase(){

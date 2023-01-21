@@ -13,6 +13,7 @@ public class Controls {
     public static Label LABEL_ON_INPUT = new Label(By.xpath("//span[text()='Search by Hotel or City Name']"));
     public static Label CHECK_PEOPLE_LABEL = new Label(By.xpath("//input[@id='travellersInput']"));
     public static Link LINK_TO_HOTELS = new Link(By.xpath("//div[text()=', United Arab Emirates']"));
+    public static Button EXRANET_LOGIN_BUTTON = new Button(By.xpath("//a[text()='Extranet Login']"));
     public static Button SEARCH_BUTTON = new Button(By.xpath("//button[text()=' Search']"));
     public static Button MY_COUNT_BUTTON = new Button(By.xpath("(//li[@id='li_myaccount'])[2]"));
     public static Button SING_UP_BUTTON = new Button(By.xpath("(//a[text()='  Sign Up'])[last()]"));

@@ -2,7 +2,7 @@ package elements;
 
 import org.openqa.selenium.By;
 
-public class Button extends WebelementBase {
+public class Button extends WebElementBase {
 
     public Button(By locator){
         super(locator);
@@ -10,5 +10,9 @@ public class Button extends WebelementBase {
 
     public void click(){
         clickOnElementBase();
+    }
+
+    public void moveTo(){
+        moveToElementBase();
     }
 }

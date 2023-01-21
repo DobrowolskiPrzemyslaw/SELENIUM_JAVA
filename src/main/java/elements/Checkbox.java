@@ -2,7 +2,7 @@ package elements;
 
 import org.openqa.selenium.By;
 
-public class Checkbox extends WebelementBase {
+public class Checkbox extends WebElementBase {
 
     public Checkbox(By locator){
         super(locator);

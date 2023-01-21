@@ -6,12 +6,11 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class DriverFactory {
 
-    public static WebDriver createWebDriverInstance(String browserName){
-        WebDriver driver = null;
-        if(browserName.equalsIgnoreCase("Chrome")){
+    public static WebDriver createWebDriverInstance(WebBrowser browserName){
+        WebDriver driver;
+        if(browserName == WebBrowser.CHROME){
             driver = new ChromeDriver(OptionManager.getChromeOptions());
-        }
-        else if(browserName.equalsIgnoreCase("Firefox")) {
+        }else{
             driver = new FirefoxDriver(OptionManager.getFireFoxOptions());
         }
         return driver;
