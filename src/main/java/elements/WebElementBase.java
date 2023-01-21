@@ -34,13 +34,11 @@ public class WebElementBase {
     }
 
     protected void sendTextBase(String text){
-        moveToElementBase();
         waitUnilVisibeBase().clear();
         waitUnilVisibeBase().sendKeys(text);
     }
 
     protected void clickOnElementBase(){
-        moveToElementBase();
         waitUnilVisibeBase().click();
     }
 
