@@ -13,7 +13,7 @@ public class GetTitleTest extends BaseTest {
     @Test
     public void getTitle(){
         driver.get("http://www.kurs-selenium.pl/demo/");
-        SeleniumHelper.assertWithLog(logger,"PHPTRAVELS | Travel Technology Partner", driver.getTitle());
-        SeleniumHelper.assertWithLog(logger,"http://www.kurs-selenium.pl/demo/", driver.getCurrentUrl());
+        SeleniumHelper.assertWithLogInfo(logger,"PHPTRAVELS | Travel Technology Partner", driver.getTitle());
+        SeleniumHelper.assertWithLogInfo(logger,"http://www.kurs-selenium.pl/demo/", driver.getCurrentUrl());
     }
 }

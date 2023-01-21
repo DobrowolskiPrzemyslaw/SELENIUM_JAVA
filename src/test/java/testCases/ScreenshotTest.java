@@ -20,6 +20,6 @@ public class ScreenshotTest extends BaseTest {
         CONFIRM_BUTTON.click();
 
         Assert.assertEquals(ALERT_TEXT_2.isVisble(), true);
-        SeleniumHelper.takeScreenShot();
+        SeleniumHelper.takeScreenshot();
     }
 }
