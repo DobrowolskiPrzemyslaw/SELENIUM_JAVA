@@ -58,7 +58,8 @@ public class ExcelReader {
     }
 
     // Tworzymy metodę umożliwiajaca czytanie plikow Execla - dla plików .xlsx (dla @DataProvider)
-    public static Object[][] readExcelFile_dataProvider_xlsx(File file) throws IOException {
+    public static Object[][] readExcelFile_dataProvider_xlsx(String excelFilePath) throws IOException {
+        File file = new File(excelFilePath);
         InputStream inputStream = new FileInputStream(file);
         XSSFWorkbook wordbook = new XSSFWorkbook(inputStream);
         Sheet sheet = wordbook.getSheetAt(0);
@@ -75,7 +76,8 @@ public class ExcelReader {
         return data;
     }
 
-    public static Object[][] readExcelFile_dataProvider_xls(File file) throws IOException {
+    public static Object[][] readExcelFile_dataProvider_xls(String excelFilePath) throws IOException {
+        File file = new File(excelFilePath);
         InputStream inputStream = new FileInputStream(file);
         HSSFWorkbook wordbook = new HSSFWorkbook(inputStream);
         Sheet sheet = wordbook.getSheetAt(0);
@@ -117,5 +119,10 @@ public class ExcelReader {
             throw new RuntimeException(e);
         }
         return tabArry;
+    }
+
+    // metoda powstala tylko aby sprawdzic czy metoda do czytania exela dziala
+    public static void main (String[]args) throws IOException {
+        readExcelFile_dataProvider_xls("src/main/resources/files/getTitleData.xls");
     }
 }
