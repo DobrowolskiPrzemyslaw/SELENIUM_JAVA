@@ -12,18 +12,15 @@ public class WebDriverWithMethods {
     WebDriver driver = DriverManager.getWebDriver();
     WebDriverWait waitDriver = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-    public WebDriverWithMethods() {
-    }
-
-    protected WebElement waitUnilVisibe(By locator){
+    private WebElement waitUnilVisibe(By locator){
         return waitDriver.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
-    protected WebElement waitUntilClickable(By locator){
+    private WebElement waitUntilClickable(By locator){
         return waitDriver.until(ExpectedConditions.elementToBeClickable(locator));
     }
 
-    protected WebElement waitUnilPresented(By locator){
+    private WebElement waitUnilPresented(By locator){
         return waitDriver.until(ExpectedConditions.presenceOfElementLocated(locator));
     }
 
@@ -43,7 +40,4 @@ public class WebDriverWithMethods {
     public String getText(By locator){
         return waitUnilVisibe(locator).getText();
     }
-
-
-
 }

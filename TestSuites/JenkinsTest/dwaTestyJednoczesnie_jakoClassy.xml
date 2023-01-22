@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<!-- uruchmienie dwóch testów jeden po drugim z roznych klas-->
-<suite name="Zestaw testów Shopify E2E">
+<!-- uruchmienie dwóch testów jednocześnie jako metod -->
+<suite name="Zestaw testów Shopify E2E" parallel="classes" thread-count="2">
     <test name="Test E2E 1">
         <classes>
             <class name="testCases.ListenerTest">
@@ -9,9 +9,9 @@
                     <include name="succesTest"/>
                 </methods>
             </class>
-            <class name="testCases.ReportTest">
+            <class name="testCases.ListenerTest">
                 <methods>
-                    <include name="test"/>
+                    <include name="failureTest"/>
                 </methods>
             </class>
         </classes>
