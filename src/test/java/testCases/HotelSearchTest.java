@@ -6,6 +6,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.*;
+import pages.Homepage;
+
 import java.util.List;
 import java.util.stream.Collectors;
 import static pages.Homepage.*;
@@ -15,15 +17,11 @@ public class HotelSearchTest extends BaseTest {
     @Test
     public void searchHotel(){
         driver.get("http://www.kurs-selenium.pl/demo/");
-        webDriverWithMethods.click(LABEL_ON_INPUT);
-        webDriverWithMethods.sendText(SEARCH_HOTEL_INPUT, "Dubai");
-        webDriverWithMethods.click(LINK_TO_HOTELS);
-        webDriverWithMethods.sendText(CHECH_IN_INPUT, "19/01/2023");
-        webDriverWithMethods.sendText(CHECH_OUT_INPUT, "19/01/2023");
-        webDriverWithMethods.click(CHECK_PEOPLE_LABEL);
-        webDriverWithMethods.sendText(ADULT_INPUT, "1");
-        webDriverWithMethods.sendText(CHILD_INPUT, "3");
-        webDriverWithMethods.click(SEARCH_BUTTON);
+        Homepage.setCity("Dubai");
+        Homepage.setData("19/01/2023","19/01/2023");
+        Homepage.setAdults("1");
+        Homepage.setChildren("3");
+        Homepage.clickSearchCityButton();
         webDriverWithMethods.isVisble(NAME_OF_HOTEL);
 
         Assert.assertEquals(webDriverWithMethods.isVisble(NAME_OF_HOTEL), true);
@@ -33,15 +31,11 @@ public class HotelSearchTest extends BaseTest {
     @Test
     public void sortNameOfHotels(){
         driver.get("http://www.kurs-selenium.pl/demo/");
-        webDriverWithMethods.click(LABEL_ON_INPUT);
-        webDriverWithMethods.sendText(SEARCH_HOTEL_INPUT, "Dubai");
-        webDriverWithMethods.click(LINK_TO_HOTELS);
-        webDriverWithMethods.sendText(CHECH_IN_INPUT, "19/01/2023");
-        webDriverWithMethods.sendText(CHECH_OUT_INPUT, "19/01/2023");
-        webDriverWithMethods.click(CHECK_PEOPLE_LABEL);
-        webDriverWithMethods.sendText(ADULT_INPUT, "1");
-        webDriverWithMethods.sendText(CHILD_INPUT, "3");
-        webDriverWithMethods.click(SEARCH_BUTTON);
+        Homepage.setCity("Dubai");
+        Homepage.setData("19/01/2023","19/01/2023");
+        Homepage.setAdults("1");
+        Homepage.setChildren("3");
+        Homepage.clickSearchCityButton();
 
         List<WebElement> list = driver.findElements(By.xpath("//h4[@class='RTL go-text-right mt0 mb4 list_title']"));
         List<String> sortedList = SeleniumHelper.sortOfList(list);
@@ -57,15 +51,11 @@ public class HotelSearchTest extends BaseTest {
     @Test
     public void withoutSortNameOfHotels(){
         driver.get("http://www.kurs-selenium.pl/demo/");
-        webDriverWithMethods.click(LABEL_ON_INPUT);
-        webDriverWithMethods.sendText(SEARCH_HOTEL_INPUT, "Dubai");
-        webDriverWithMethods.click(LINK_TO_HOTELS);
-        webDriverWithMethods.sendText(CHECH_IN_INPUT, "19/01/2023");
-        webDriverWithMethods.sendText(CHECH_OUT_INPUT, "19/01/2023");
-        webDriverWithMethods.click(CHECK_PEOPLE_LABEL);
-        webDriverWithMethods.sendText(ADULT_INPUT, "1");
-        webDriverWithMethods.sendText(CHILD_INPUT, "3");
-        webDriverWithMethods.click(SEARCH_BUTTON);
+        Homepage.setCity("Dubai");
+        Homepage.setData("19/01/2023","19/01/2023");
+        Homepage.setAdults("1");
+        Homepage.setChildren("3");
+        Homepage.clickSearchCityButton();
 
         List list = driver.findElements(By.xpath("//h4[@class='RTL go-text-right mt0 mb4 list_title']"))
                 .stream()
@@ -82,12 +72,10 @@ public class HotelSearchTest extends BaseTest {
     @Test
     public void searchHotel_not_found(){
         driver.get("http://www.kurs-selenium.pl/demo/");
-        webDriverWithMethods.sendText(CHECH_IN_INPUT, "19/01/2023");
-        webDriverWithMethods.sendText(CHECH_OUT_INPUT, "19/01/2023");
-        webDriverWithMethods.click(CHECK_PEOPLE_LABEL);
-        webDriverWithMethods.sendText(ADULT_INPUT, "1");
-        webDriverWithMethods.sendText(CHILD_INPUT, "3");
-        webDriverWithMethods.click(SEARCH_BUTTON);
+        Homepage.setData("19/01/2023","19/01/2023");
+        Homepage.setAdults("1");
+        Homepage.setChildren("3");
+        Homepage.clickSearchCityButton();
         Assert.assertEquals(webDriverWithMethods.isVisble(NAME_OF_HOTEL), true);
         Assert.assertEquals(webDriverWithMethods.getText(NAME_OF_HOTEL), "Jumeirah Beach Hotel");
     }

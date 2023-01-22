@@ -11,7 +11,7 @@ import org.testng.annotations.*;
 
 public class BaseTest  {
     public WebDriver driver;
-    public WebDriverWithMethods webDriverWithMethods;
+    public static WebDriverWithMethods webDriverWithMethods;
     protected static ExtentHtmlReporter htmlReporter;
     protected static ExtentReports extentReporters;
 
@@ -33,7 +33,7 @@ public class BaseTest  {
 
     @AfterMethod
     public void tearDown() {
-        driver.close();
+//        driver.close();
     }
 
     @AfterSuite
