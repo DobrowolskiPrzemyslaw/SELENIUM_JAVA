@@ -6,7 +6,6 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import java.io.File;
 import java.io.IOException;
 
 public class GetTitleTest_with_DataProvider_ExcelParameters extends BaseTest {

@@ -3,6 +3,7 @@ package testCases;
 import base.BaseTest;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
+import methods.WebDriverWithMethods;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -10,6 +11,7 @@ import static pages.Controls.*;
 import static pages.Controls.NAME_OF_HOTEL;
 
 public class ReportTest extends BaseTest {
+    WebDriverWithMethods webDriverWithMethods = new WebDriverWithMethods();
 
     @Test
     public void test(){
@@ -17,20 +19,20 @@ public class ReportTest extends BaseTest {
 
         driver.get("http://www.kurs-selenium.pl/demo/");
         test.log(Status.PASS, "Otwarcie strony z hotelami");
-        LABEL_ON_INPUT.click();
-        SEARCH_HOTEL_INPUT.sendText("Dubai");
-        LINK_TO_HOTELS.click();
-        CHECH_IN_INPUT.sendText("19/01/2023");
-        CHECH_OUT_INPUT.sendText("19/01/2023");
-        CHECK_PEOPLE_LABEL.click();
-        ADULT_INPUT.sendText("1");
-        CHILD_INPUT.sendText("3");
-        SEARCH_BUTTON.click();
-        NAME_OF_HOTEL.isVisble();
+        webDriverWithMethods.click(LABEL_ON_INPUT);
+        webDriverWithMethods.sendText(SEARCH_HOTEL_INPUT, "Dubai");
+        webDriverWithMethods.click(LINK_TO_HOTELS);
+        webDriverWithMethods.sendText(CHECH_IN_INPUT, "19/01/2023");
+        webDriverWithMethods.sendText(CHECH_OUT_INPUT, "19/01/2023");
+        webDriverWithMethods.click(CHECK_PEOPLE_LABEL);
+        webDriverWithMethods.sendText(ADULT_INPUT, "1");
+        webDriverWithMethods.sendText(CHILD_INPUT, "3");
+        webDriverWithMethods.click(SEARCH_BUTTON);
+        webDriverWithMethods.isVisble(NAME_OF_HOTEL);
         test.log(Status.PASS, "Udalo sie wyszukac hotel");
 
-        Assert.assertEquals(NAME_OF_HOTEL.isVisble(), true);
-        Assert.assertEquals(NAME_OF_HOTEL.getText(), "Jumeirah Beach Hotel");
+        Assert.assertEquals(webDriverWithMethods.isVisble(NAME_OF_HOTEL), true);
+        Assert.assertEquals(webDriverWithMethods.getText(NAME_OF_HOTEL), "Jumeirah Beach Hotel");
 
         test.log(Status.PASS, "Zamkniecie strony z hotelami");
     }

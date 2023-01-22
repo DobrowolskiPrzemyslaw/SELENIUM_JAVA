@@ -21,8 +21,6 @@ public class OptionManager {
         options.setPlatformName("Windows 10");
         options.setBrowserVersion("92");
         Map<String, Object> cloudOptions = new HashMap<>();
-//        cloudOptions.put("build", myTestBuild);
-//        cloudOptions.put("name", myTestName);
         options.setCapability("cloud:options", cloudOptions);
 
         FirefoxProfile profile = new FirefoxProfile();

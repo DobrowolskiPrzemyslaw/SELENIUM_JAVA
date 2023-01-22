@@ -2,6 +2,7 @@ package testCases;
 
 import base.BaseTest;
 import helper.SeleniumHelper;
+import methods.WebDriverWithMethods;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -10,16 +11,16 @@ import java.io.IOException;
 import static pages.Controls.*;
 
 public class ScreenshotTest extends BaseTest {
+    WebDriverWithMethods webDriverWithMethods = new WebDriverWithMethods();
 
     @Test
     public void screenshot() throws IOException {
         driver.get("http://www.kurs-selenium.pl/demo/");
+        webDriverWithMethods.click(MY_COUNT_BUTTON);
+        webDriverWithMethods.click(SING_UP_BUTTON);
+        webDriverWithMethods.click(CONFIRM_BUTTON);
 
-        MY_COUNT_BUTTON.click();
-        SING_UP_BUTTON.click();
-        CONFIRM_BUTTON.click();
-
-        Assert.assertEquals(ALERT_TEXT_2.isVisble(), true);
+        Assert.assertEquals(webDriverWithMethods.isVisble(ALERT_TEXT_2), true);
         SeleniumHelper.takeScreenshot();
     }
 }

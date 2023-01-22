@@ -22,7 +22,7 @@ import java.util.stream.Collectors;
 public class SeleniumHelper {
 
     public static String takeScreenshot() throws IOException {
-        WebDriver driver = DriverManager.getDriver();
+        WebDriver driver = DriverManager.getWebDriver();
         TakesScreenshot takeScreenShot = (TakesScreenshot) driver;
         File screenshotFile = takeScreenShot.getScreenshotAs(OutputType.FILE);
         File destinationFile = new File( "src//main//resources//screenShot//" + LocalTime.now().getNano() + ".png");
@@ -54,7 +54,7 @@ public class SeleniumHelper {
         return returnList;
     }
 
-    public static String loadProperties(String propertiesName) throws IOException{
+    public static String loadProperties(String propertiesName) throws IOException {
         InputStream inputStream = new FileInputStream("src/main/resources/config.properties");
         Properties properties = new Properties();
         properties.load(inputStream);
