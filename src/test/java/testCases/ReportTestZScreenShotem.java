@@ -8,9 +8,7 @@ import methods.WebDriverWithMethods;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import java.io.IOException;
-
-import static pages.Controls.*;
-import static pages.Controls.NAME_OF_HOTEL;
+import static pages.Homepage.*;
 
 public class ReportTestZScreenShotem extends BaseTest {
     WebDriverWithMethods webDriverWithMethods = new WebDriverWithMethods();

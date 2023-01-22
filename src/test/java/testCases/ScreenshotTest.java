@@ -5,10 +5,10 @@ import helper.SeleniumHelper;
 import methods.WebDriverWithMethods;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import java.io.IOException;
-
-import static pages.Controls.*;
+import static pages.Homepage.*;
+import static pages.SingUpPage.ALERT_TEXT_2;
+import static pages.SingUpPage.CONFIRM_BUTTON;
 
 public class ScreenshotTest extends BaseTest {
     WebDriverWithMethods webDriverWithMethods = new WebDriverWithMethods();

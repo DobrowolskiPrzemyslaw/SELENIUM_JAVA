@@ -2,17 +2,15 @@ package testCases;
 
 import base.BaseTest;
 import helper.SeleniumHelper;
-import methods.WebDriverWithMethods;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import java.util.List;
 import java.util.stream.Collectors;
-import static pages.Controls.*;
+import static pages.Homepage.*;
 
 public class HotelSearchTest extends BaseTest {
-    WebDriverWithMethods webDriverWithMethods = new WebDriverWithMethods();
 
     @Test
     public void searchHotel(){
@@ -84,7 +82,6 @@ public class HotelSearchTest extends BaseTest {
     @Test
     public void searchHotel_not_found(){
         driver.get("http://www.kurs-selenium.pl/demo/");
-
         webDriverWithMethods.sendText(CHECH_IN_INPUT, "19/01/2023");
         webDriverWithMethods.sendText(CHECH_OUT_INPUT, "19/01/2023");
         webDriverWithMethods.click(CHECK_PEOPLE_LABEL);

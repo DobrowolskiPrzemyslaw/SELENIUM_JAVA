@@ -5,7 +5,6 @@ import driver.DriverManager;
 import methods.WebDriverWithMethods;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
-import static pages.Controls.EXRANET_LOGIN_BUTTON;
 
 public class ScrollMouseTest extends BaseTest {
     WebDriverWithMethods webDriverWithMethods = new WebDriverWithMethods();

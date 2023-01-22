@@ -1,14 +1,13 @@
 package testCases;
 
 import base.BaseTest;
-import methods.WebDriverWithMethods;
 import org.apache.commons.lang.RandomStringUtils;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import static pages.Controls.*;
+import static pages.Homepage.*;
+import static pages.SingUpPage.*;
 
 public class SingUpTest extends BaseTest {
-    WebDriverWithMethods webDriverWithMethods = new WebDriverWithMethods();
 
     @Test
     public void singUp_withoutData(){
@@ -54,7 +53,7 @@ public class SingUpTest extends BaseTest {
         webDriverWithMethods.sendText(CONFIRM_PASSWORD_INPUT, "asdadaffafaq2345ty5t54t34tf");
         webDriverWithMethods.click(CONFIRM_BUTTON);
 
-        Assert.assertEquals(webDriverWithMethods.getText(EMAIL_ALREADY_EXIST_TEXT), " Email Already Exists. ");
+        Assert.assertEquals(webDriverWithMethods.getText(EMAIL_ALREADY_EXIST_TEXT), "Email Already Exists.");
     }
 
     @Test
@@ -72,7 +71,7 @@ public class SingUpTest extends BaseTest {
         webDriverWithMethods.sendText(PASSWORD_INPUT,pwd);
         webDriverWithMethods.sendText(CONFIRM_PASSWORD_INPUT,pwd);
         webDriverWithMethods.click(CONFIRM_BUTTON);
-        
+
         Assert.assertEquals(webDriverWithMethods.getText(ALERT_TEXT_2), "The Email field must contain a valid email address.");
     }
 }

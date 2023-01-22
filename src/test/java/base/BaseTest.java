@@ -5,11 +5,13 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import driver.DriverManager;
 import driver.WebBrowser;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import methods.WebDriverWithMethods;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
 
 public class BaseTest  {
     public WebDriver driver;
+    public WebDriverWithMethods webDriverWithMethods;
     protected static ExtentHtmlReporter htmlReporter;
     protected static ExtentReports extentReporters;
 
@@ -26,6 +28,7 @@ public class BaseTest  {
         DriverManager.createInstance(WebBrowser.CHROME);
         driver = DriverManager.getWebDriver();
         driver.manage().window().maximize();
+        webDriverWithMethods = new WebDriverWithMethods();
     }
 
     @AfterMethod
