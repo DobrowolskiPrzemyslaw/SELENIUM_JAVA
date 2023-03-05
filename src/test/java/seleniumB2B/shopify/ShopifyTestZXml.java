@@ -1,5 +1,6 @@
 package seleniumB2B.shopify;
 
+import org.testng.Assert;
 import seleniumB2B.helper.ExcelReader;
 import seleniumB2B.baseTests.BaseTestZXml;
 import seleniumB2B.pages.shopify.HomePage;
@@ -13,27 +14,25 @@ import java.io.IOException;
 
 public class ShopifyTestZXml extends BaseTestZXml {
 
-    @Test // tworzymy pierwszy test
+    @Test
     @Parameters({"Item"})
-    // tych parametrów może być więcej, zostaną przekazane do metody zgodnie zkolejnością wpisania // podajemy nazwy parametrów z .xml
     public void shopifyFirstTest(String item) {
         Reporter.log("Zaczynam test shopifyFirstTest");
         String expectedText = "Your payment details couldn’t be verified. Check your card details and try again.";
-        HomePage page = new HomePage(); // Stworzenie nowego obiektu klasy HomePage
-        // String actualError = bo ostatnia metoda .getErrorMessage(); zwraca stringa z wiadomości
-        String actualError = page                                                                                                           // pisanie kolejnych metod po kropce jest możliwe dzieki temu, ze poszczegolne metody zwracja obiekt HomePage (return HomePage)
-                .searchItem(item)                                                                                                           // Odwolanie sie do obiektu i wywolanie metody szukajacej (metoda musi miec juz zlokalizowany odopwiedni input)
-                .clickOnItemLink()                                                                                                          // Klika w konkretny link
-                .changeColor("Rust")                                                                                                        // pisanie kolejnych metod po kropce jest możliwe dzieki temu, ze poszczegolne metody zwracja obiekt HomePage (return HomePage)
-                .changeSize("11")                                                                                                           // Odwolanie sie do obiektu i wywolanie metody szukajacej (metoda musi miec juz zlokalizowany odopwiedni input)
-                .clickOnBuyButton()                                                                                                         // Klika w konkretny link
+        HomePage page = new HomePage();
+        String actualError = page
+                .searchItem(item)
+                .clickOnItemLink()
+                .changeColor("Rust")
+                .changeSize("11")
+                .clickOnBuyButton()
                 .fillInContactForm("przeme@wp.pl", false, "Przemyslaw", "Kowalski", "Targowa 5/39",
                         "09-500", "Warszawa", "888-442-444", true, "Poland")
                 .shipping()
                 .fillInPaymentInformation("4108", "6526", "1018", "1217", "Danica Killough", "12", "2024", "846")
                 .getErrorMessage();
 
-//        Assert.assertEquals(actualError, expectedText);
+        Assert.assertEquals(actualError, expectedText);
     }
 
     //    // Dla ShopifyTests1 i ShopifyTests3
@@ -97,8 +96,5 @@ public class ShopifyTestZXml extends BaseTestZXml {
 //    public Object [][] getData(){
 //        return ExcelHelper.readExcelFile5("src/main/resources/Zeszyt2.xlsx", "Arkusz1", 1 );
 //    }
-
-
-
     }
 }

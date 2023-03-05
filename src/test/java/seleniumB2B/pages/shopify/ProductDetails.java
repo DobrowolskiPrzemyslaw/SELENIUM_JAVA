@@ -7,13 +7,9 @@ public class ProductDetails {
     SelectBox selectColor;
     SelectBox selectSize;
     Button buyButton;
-//    Button addToChartButton;
+    Button addToChartButton;
 
-
-    // Konstruktor dla klasy
     public ProductDetails(){
-
-        // Stworzenie obiektów i przekazanie lokatorów - ścieżek do tych webelementów na stronach
         selectColor = new SelectBox(By.id("ProductSelect-product-template-option-0"));
         selectSize = new SelectBox(By.id("ProductSelect-product-template-option-1"));
         buyButton = new Button(By.xpath("//button[@data-testid='Checkout-button']"));

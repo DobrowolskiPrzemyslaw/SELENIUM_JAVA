@@ -2,40 +2,19 @@ package seleniumB2B.driver;
 
 import org.openqa.selenium.WebDriver;
 
-public class DriverManager { // tworzymy publiczną (dostępną wszędzie) klase DriverManger
-
-    // private - odwołać się do obiektu o nazwie webDriver można tylko w tej klasie DriverManger
-    // static - istnieje zawsze, do życia nie potrzebuje obiektów
-    // final - zabezpiecza przed możliwością zmiany/nadpisania wartości
-    // ThreadLocal<WebDriver> - wątek lokalny zwracający obietky klasy <WebDriver>
-    // new ThreadLocal<>() // <> - brak obiektu, () -brak parametru
+public class DriverManager {
     private static final ThreadLocal<WebDriver> webDriver = new ThreadLocal<>();
 
-
-    // metoda służąca do pobierania drivera
-    // public - metoda dostępna publicznie (można się do niej odwołać z każdego miejsca)
-    // static - istnieje zawsze, do życia nie potrzebuje obiektów (możemy się do niej odwałać również poprzez nazwę klasy w której jest zimplementowana)
-    // webDriver - nazwa obiektu
     public static WebDriver getDriver(){
         return webDriver.get();
     }
 
-
-    // metoda służąca do wysyłania drivera
-    // public - metoda dostępna publicznie (można się do niej odwołać z każdego miejsca)
-    // static - istnieje zawsze, do życia nie potrzebuje obiektów (możemy się do niej odwałać również poprzez nazwę klasy w której jest zimplementowana)
-    // webDriver - nazwa obiektu
-    // (driver) - nazwa parametru dla obiektu
     public static void setWebDriver(WebDriver driver) {
         webDriver.set(driver);
     }
 
-
-    // public - metoda dostępna publicznie (można się do niej odwołać z każdego miejsca)
-    // static - istnieje zawsze, do życia nie potrzebuje obiektów (możemy się do niej odwałać również poprzez nazwę klasy w której jest zimplementowana)
-    // void - oznacza, że metoda nic nie zwraca (zamiast tego mogłoby być string, int, boolean - wówczas w ciele metody musiałoby pojawić się słowo return (i nazwa zmiennej danego typu))
     public static void createInstance(String browserName) {
-        setWebDriver(DriverFactory.createWebDriverInstance(browserName)); // metoda ustawia nowego WebDriver
+        setWebDriver(DriverFactory.createWebDriverInstance(browserName));
     }
 }
 
@@ -69,5 +48,4 @@ public class DriverFactory {
         return driver; // metoda createWebDriverInstance zwraca WebDriver driver w zależności od podanego parametru browserName
     }
 }
-
 */
