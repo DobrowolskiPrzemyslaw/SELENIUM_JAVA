@@ -9,7 +9,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import pl.testeroprogramowania.utils.DriverFactory;
 
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
 
 public class BaseTest {
 
@@ -19,7 +19,7 @@ public class BaseTest {
 
     @BeforeSuite
     public void beforeSuite(){
-        htmlReporter = new ExtentHtmlReporter("index.html");
+        htmlReporter = new ExtentHtmlReporter("src/main/resources/raports/index.html");
         extentReports = new ExtentReports();
         extentReports.attachReporter(htmlReporter);
     }
@@ -32,7 +32,7 @@ public class BaseTest {
     @BeforeMethod
     public void setup() {
         driver = DriverFactory.getDriver();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10L));
         driver.manage().window().maximize();
         driver.get("http://seleniumdemo.com/");
     }
