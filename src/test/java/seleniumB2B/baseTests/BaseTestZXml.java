@@ -21,7 +21,7 @@ public class BaseTestZXml {
         try {
             Thread.sleep(5000);
         } catch (Exception e) {
-
+            e.getStackTrace();
         }
         DriverManager.getDriver().quit();
     }

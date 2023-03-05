@@ -1,4 +1,4 @@
-package seleniumB2B.pages.shopify;
+package seleniumB2B.pages;
 
 import seleniumB2B.elements.*;
 import org.openqa.selenium.By;
@@ -7,7 +7,6 @@ public class ProductDetails {
     SelectBox selectColor;
     SelectBox selectSize;
     Button buyButton;
-    Button addToChartButton;
 
     public ProductDetails(){
         selectColor = new SelectBox(By.id("ProductSelect-product-template-option-0"));

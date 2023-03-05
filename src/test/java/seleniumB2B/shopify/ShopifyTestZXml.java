@@ -3,7 +3,7 @@ package seleniumB2B.shopify;
 import org.testng.Assert;
 import seleniumB2B.helper.ExcelReader;
 import seleniumB2B.baseTests.BaseTestZXml;
-import seleniumB2B.pages.shopify.HomePage;
+import seleniumB2B.pages.HomePage;
 import org.testng.Reporter;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
