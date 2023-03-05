@@ -9,7 +9,6 @@ public class DriverFactory {
 
     public static WebDriver createWebDriverInstance(WebBrowser browserName){
         WebDriver driver;
-        WebDriverWait waitDriver;
         if(browserName == WebBrowser.CHROME){
             driver = new ChromeDriver(OptionManager.getChromeOptions());
         }else{
