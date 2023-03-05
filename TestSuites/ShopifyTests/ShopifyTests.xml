@@ -6,7 +6,7 @@
     <parameter name="env" value="https://simpletheme.myshopify.com/"></parameter>   <!--parametry globalne dla wielu testu - W TAGU suit, przekazenie parametry do @BeforeTest-->
     <test name="Test E2E 1">
         <classes>
-            <class name="seleniumB2B.shopify.ShopifyTest">
+            <class name="seleniumB2B.shopifyTests.ShopifyTest">
                 <parameter name="Item2" value="Boot"></parameter>                   <!--przekazenie parametry do @Test - W TAGU class-->
                 <methods>
                     <include name="shopifyFirstTest2"/>
@@ -16,7 +16,7 @@
     </test>
     <test name="Test E2E 2">
         <classes>
-            <class name="seleniumB2B.shopify.ShopifyTest">
+            <class name="seleniumB2B.shopifyTests.ShopifyTest">
                 <parameter name="Item" value="Goran Zip Boot - Rust"></parameter>   <!--przekazenie parametry do @Test - W TAGU class-->
                 <methods>
                     <include name="shopifyFirstTest"/>

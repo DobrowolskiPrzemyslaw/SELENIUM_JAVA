@@ -16,11 +16,6 @@ public class BaseTest {
 
     @AfterMethod
     public void tearDown() {
-        try {
-            Thread.sleep(5000);
-        } catch (Exception e) {
-            e.getStackTrace();
-        }
         DriverManager.getDriver().quit();
     }
 }
