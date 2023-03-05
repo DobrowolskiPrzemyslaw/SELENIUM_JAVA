@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!--Do jednoczesnego odpalania kilku testów z danymi z excela-->
+
+<!-- parallel="tests"  - służy do równoczesnego odpalania testów -->
+<!-- thread-count="2" -  określamy ile wątków ma być jednocześnie obsługiwanych-->
+<!-- data-provider-thread-count="3" - określamy ile testów ma się dopalić jednocześnie z excela-->
+<!--@DataProvider(parallel = true) musimy dodatkowa określe parallel = true przy DataProviderze-->
+<suite name="Zestaw testów Shopify E2E" parallel="tests" thread-count="2" data-provider-thread-count="3">
+
+    <!-- poniżej umieszczamy parametry globalne dla wielu testu -->
+    <parameter name="browserName" value="chrome"></parameter> <!--przekazenie parametry do @BeforeTest-->
+    <parameter name="env" value="https://simpletheme.myshopify.com/"></parameter> <!--przekazenie parametry do @BeforeTest-->
+    <test name="Test E2E 1">
+        <classes>
+            <class name="framework.selenium.shopify.ShopifyTest">
+                <!-- poniżej umieszczamy parametry globalne dla wielu testu -->
+                <methods>
+                    <include name="shopifyFirstTest2"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

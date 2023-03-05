@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!-- uruchmienie dwóch testów jednocześnie jako metod -->
+
+<!-- parallel="methods" - służy do równoczesnego odpalania metod -->
+<!-- thread-count="2" -  określamy ile wątków ma być jednocześnie obsługiwanych-->
+<suite name="Zestaw testów Shopify E2E" parallel="methods" thread-count="2">
+
+    <!-- poniżej umieszczamy parametry globalne dla wielu testu -->
+    <parameter name="browserName" value="chrome"></parameter> <!--przekazenie parametry do @BeforeTest-->
+    <parameter name="env" value="https://simpletheme.myshopify.com/"></parameter> <!--przekazenie parametry do @BeforeTest-->
+    <test name="Test E2E 1">
+        <classes>
+            <class name="framework.selenium.shopify.ShopifyTest">
+                <!-- poniżej umieszczamy parametry globalne dla wielu testu -->
+                <!--<parameter name="browserName" value="chrome"></parameter> przekazenie parametry do @BeforeTest-->
+                <!--<parameter name="env" value="https://simpletheme.myshopify.com/"></parameter> przekazenie parametry do @BeforeTest-->
+               <parameter name="Item" value="Goran Zip Boot - Rust"></parameter> <!-- przekazenie parametry do @Test-->
+                <methods>
+                    <include name="shopifyFirstTest2"/>
+                    <include name="shopifyFirstTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
