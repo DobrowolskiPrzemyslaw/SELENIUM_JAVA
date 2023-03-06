@@ -11,7 +11,6 @@ public class BaseTest {
         DriverManager.createInstance("chrome");
         WebDriver driver = DriverManager.getDriver();
         driver.manage().window().maximize();
-        driver.get("https://simpletheme.myshopify.com/");
     }
 
     @AfterMethod
