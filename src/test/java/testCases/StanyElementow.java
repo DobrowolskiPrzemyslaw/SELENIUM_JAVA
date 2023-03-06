@@ -14,22 +14,15 @@ public class StanyElementow {
     // paragraf jest w strukturze ale jest ukryty
     @Test
     public void czyIstnieje(){
-        WebDriverManager.firefoxdriver().setup();
-        driver = new FirefoxDriver();
-        driver.manage().window().maximize();
         driver.get("https://testeroprogramowania.github.io/selenium/basics.html");
         System.out.println(czyIstniej2(By.tagName("p")));
         System.out.println(czyIstniej2(By.id("topSecret")));
-
         System.out.println(czyIstniej(By.tagName("p")));
         System.out.println(czyIstniej(By.id("topSecret")));
     }
 
     @Test
     public void czyWidoczny(){
-        WebDriverManager.firefoxdriver().setup();
-        driver = new FirefoxDriver();
-        driver.manage().window().maximize();
         driver.get("https://testeroprogramowania.github.io/selenium/basics.html");
         System.out.println(driver.findElement(By.tagName("p")).isDisplayed());      //FALSE JESLI element jest ukryty
         System.out.println(driver.findElement(By.tagName("button")).isDisplayed()); //TRUE JESLI element nie jest ukryty
@@ -39,18 +32,12 @@ public class StanyElementow {
     // do sprawdzeniea mozliwosci wpisania czegos w pole tesktowe lub input
     @Test
     public void czyEdytowalnyKlikalny(){
-        WebDriverManager.firefoxdriver().setup();
-        driver = new FirefoxDriver();
-        driver.manage().window().maximize();
         driver.get("https://testeroprogramowania.github.io/selenium/basics.html");
         System.out.println(driver.findElement(By.tagName("button")).isEnabled());   //TRUE JESLI element jest np. klikalny/ nie jest wyszarzony
     }
 
     @Test
     public void czyZaznaczony(){
-        WebDriverManager.firefoxdriver().setup();
-        driver = new FirefoxDriver();
-        driver.manage().window().maximize();
         driver.get("https://testeroprogramowania.github.io/selenium/basics.html");
         System.out.println(driver.findElement(By.cssSelector("[type='checkbox']")).isSelected());   //FALSE JESLI element nie jest zaznaczony
         driver.findElement(By.cssSelector("[type='checkbox']")).click();

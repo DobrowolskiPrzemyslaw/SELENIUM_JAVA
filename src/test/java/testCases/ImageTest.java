@@ -16,7 +16,6 @@ public class ImageTest {
     public void pobranieWysokosci(){
         WebDriverManager.firefoxdriver().setup();
         driver = new FirefoxDriver();
-        driver.manage().window().maximize();
         driver.get("https://testeroprogramowania.github.io/selenium/basics.html");
         WebElement image = driver.findElement(By.tagName("img"));
         String wysokoscObrazka = image.getAttribute("naturalHeight");
@@ -28,7 +27,6 @@ public class ImageTest {
     public void pobranieWysokosci2(){
         WebDriverManager.firefoxdriver().setup();
         driver = new FirefoxDriver();
-        driver.manage().window().maximize();
         driver.get("https://testeroprogramowania.github.io/selenium/basicsa.html"); // bledy endpoint
         WebElement image = driver.findElement(By.tagName("img"));
         String wysokoscObrazka = image.getAttribute("naturalHeight");
@@ -40,7 +38,6 @@ public class ImageTest {
     public void pobranieWymiarow(){
         WebDriverManager.firefoxdriver().setup();
         driver = new FirefoxDriver();
-        driver.manage().window().maximize();
         driver.get("https://testeroprogramowania.github.io/selenium/basicsa.html");
         Rectangle res = driver.findElement(By.tagName("img")).getRect();
         System.out.println(res.getX());
@@ -53,7 +50,6 @@ public class ImageTest {
     public void pobranieWartosciAtrubutu(){
         WebDriverManager.firefoxdriver().setup();
         driver = new FirefoxDriver();
-        driver.manage().window().maximize();
         driver.get("https://testeroprogramowania.github.io/selenium/basicsa.html");
         String res = driver.findElement(By.tagName("img")).getCssValue("color");
         System.out.println(res);

@@ -60,4 +60,9 @@ public class SeleniumHelper {
         properties.load(inputStream);
         return properties.getProperty(propertiesName);
     }
+
+    public static void setScreen() throws IOException {
+        String szerokosc = SeleniumHelper.loadProperties("browser.width=1200");
+        String wysokosc = SeleniumHelper.loadProperties("browser.height=1200");
+    }
 }
