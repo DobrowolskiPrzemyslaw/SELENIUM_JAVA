@@ -1,6 +1,6 @@
 package seleniumB2B.baseTests;
 
-import framework.selenium.driver.DriverManager;
+import framework.selenium.base.driver.DriverManager;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -16,6 +16,6 @@ public class BaseTest {
 
     @AfterMethod
     public void tearDown() {
-        DriverManager.getDriver().quit();
+//        DriverManager.getDriver().quit();
     }
 }

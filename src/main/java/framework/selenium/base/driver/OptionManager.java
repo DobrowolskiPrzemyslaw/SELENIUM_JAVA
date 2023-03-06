@@ -1,4 +1,4 @@
-package framework.selenium.driver;
+package framework.selenium.base.driver;
 
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;

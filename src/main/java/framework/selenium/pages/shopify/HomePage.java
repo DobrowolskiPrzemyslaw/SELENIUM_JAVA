@@ -1,8 +1,8 @@
-package seleniumB2B.pages;
+package framework.selenium.pages.shopify;
 
-import framework.selenium.elements.Button;
-import framework.selenium.elements.InputTextBox;
-import framework.selenium.elements.Link;
+import framework.selenium.base.elements.Button;
+import framework.selenium.base.elements.InputTextBox;
+import framework.selenium.base.elements.Link;
 import org.openqa.selenium.By;
 
 public class HomePage {
@@ -13,17 +13,17 @@ public class HomePage {
     public HomePage(){
         searchField = new InputTextBox(By.className("search-bar__input"));
         searchButton = new Button(By.className("search-bar__submit"));
-        productDetialLink = new Link(By.linkText("Goran Zip Boot - Rust"));
+        productDetialLink = new Link(By.xpath("//a[@title='Goran Zip Boot - Rust']"));
     }
 
     public HomePage searchItem(String item){
         searchField.sendText(item);
-        searchButton.clickOnElement();
+        searchButton.click();
         return this;
     }
 
-    public ProductDetails clickOnItemLink(){
-        productDetialLink.clickOnLink();
+    public ProductDetails clickOnItemLink() throws InterruptedException {
+        productDetialLink.click();
         return new ProductDetails();
     }
 }

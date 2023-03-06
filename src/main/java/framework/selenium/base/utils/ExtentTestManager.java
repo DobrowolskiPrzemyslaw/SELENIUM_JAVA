@@ -1,4 +1,4 @@
-package framework.selenium.utils;//package framework.selenium.base.utils.reports;
+package framework.selenium.base.utils;//package framework.selenium.base.utils.reports;
 //
 //import com.relevantcodes.extentreports.ExtentReports;
 //

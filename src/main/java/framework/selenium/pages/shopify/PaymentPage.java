@@ -1,7 +1,6 @@
-package seleniumB2B.pages;
+package framework.selenium.pages.shopify;
 
-import framework.selenium.elements.*;
-import seleniumB2B.elements.*;
+import framework.selenium.base.elements.*;
 import org.openqa.selenium.By;
 
 public class PaymentPage {
@@ -10,8 +9,6 @@ public class PaymentPage {
     InputTextBox nameCardField;
     InputTextBox expirationDateField;
     InputTextBox securityCodeField;
-    InputRadioButton diffAdd;
-    InputRadioButton sameAdd;
     Button payButton;
     IFrameElement cardNumberFrame;
     IFrameElement nameCardFrame;
@@ -24,14 +21,12 @@ public class PaymentPage {
         nameCardField = new InputTextBox(By.id("name"));
         expirationDateField = new InputTextBox(By.id("expiry"));
         securityCodeField = new InputTextBox(By.id("verification_value"));
-        diffAdd = new InputRadioButton(By.xpath("//input[@id='checkout_different_billing_address_true']"));
-        sameAdd = new InputRadioButton(By.xpath("//input[@id='checkout_different_billing_address_false']"));
-        payButton = new Button(By.xpath("//button[@id='continue_button']"));
+        payButton = new Button(By.xpath("//button[./span[text()='Pay now']]"));
         cardNumberFrame = new IFrameElement(By.xpath("//iframe[starts-with(@id, 'card-fields-number-')]"));
         nameCardFrame = new IFrameElement(By.xpath("//iframe[starts-with(@id, 'card-fields-name-')]"));
         expirationDateFrame = new IFrameElement(By.xpath("//iframe[starts-with(@id, 'card-fields-expiry-')]"));
         securityCodeFrame = new IFrameElement(By.xpath("//iframe[starts-with(@id, 'card-fields-verification_value-')]"));
-        errorMassage = new Notice((By.xpath("//div[@class='notice notice--error default-background']//p")));
+        errorMassage = new Notice(By.className("sdr03sa"));
     }
 
     public PaymentPage fillInPaymentInformation (String cardNumber1, String cardNumber2, String cardNumber3, String cardNumber4, String nameCard, String expirationDate1, String expirationDate2, String securityCode)  {
@@ -47,11 +42,8 @@ public class PaymentPage {
         expirationDateField.sendText2(expirationDate2);
         securityCodeFrame.switchToFrame();
         securityCodeField.sendText(securityCode);
-//        BaseElements.switchToDefaultBase();
         securityCodeField.switchToDefaultBase();
-        diffAdd.selectRadioButton();
-        sameAdd.selectRadioButton();
-        payButton.clickOnElement();
+        payButton.click();
         return this;
     }
 

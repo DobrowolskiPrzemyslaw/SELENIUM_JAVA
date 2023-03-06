@@ -1,4 +1,4 @@
-package framework.selenium.elements;
+package framework.selenium.base.elements;
 
 import org.openqa.selenium.By;
 
@@ -8,7 +8,7 @@ public class Button extends BaseElements{
         super(locator);
     }
 
-    public void clickOnElement(){
+    public void click(){
         clickOnElementBase();
     }
 

@@ -1,4 +1,4 @@
-package framework.selenium.utils;//package baseB2B.utils.reports;
+package framework.selenium.base.utils;//package baseB2B.utils.reports;
 //
 //import com.aventstack.extentreports.ExtentReports;
 //

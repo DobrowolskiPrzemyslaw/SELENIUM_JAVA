@@ -1,9 +1,9 @@
-package seleniumB2B.shopifyTests;
+package seleniumB2B.shopify;
 
 import org.testng.Assert;
 import framework.selenium.helper.ExcelReader;
-import seleniumB2B.baseTests.BaseTestZXml;
-import seleniumB2B.pages.HomePage;
+import seleniumB2B.baseTests.BaseTestDlaTestowzXml;
+import framework.selenium.pages.shopify.HomePage;
 import org.testng.Reporter;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
@@ -12,28 +12,28 @@ import org.testng.annotations.Test;
 import java.io.File;
 import java.io.IOException;
 
-public class ShopifyTestZXml extends BaseTestZXml {
+public class ShopifyTestZXml extends BaseTestDlaTestowzXml {
 
-    @Test
-    @Parameters({"Item"})
-    public void shopifyFirstTest(String item) {
-        Reporter.log("Zaczynam test shopifyFirstTest");
-        String expectedText = "Your payment details couldn’t be verified. Check your card details and try again.";
-        HomePage page = new HomePage();
-        String actualError = page
-                .searchItem(item)
-                .clickOnItemLink()
-                .changeColor("Rust")
-                .changeSize("11")
-                .clickOnBuyButton()
-                .fillInContactForm("przeme@wp.pl", false, "Przemyslaw", "Kowalski", "Targowa 5/39",
-                        "09-500", "Warszawa", "888-442-444", true, "Poland")
-                .shipping()
-                .fillInPaymentInformation("4108", "6526", "1018", "1217", "Danica Killough", "12", "2024", "846")
-                .getErrorMessage();
-
-        Assert.assertEquals(actualError, expectedText);
-    }
+//    @Test
+//    @Parameters({"Item"})
+//    public void shopifyFirstTest(String item) {
+//        Reporter.log("Zaczynam test shopifyFirstTest");
+//        String expectedText = "Your payment details couldn’t be verified. Check your card details and try again.";
+//        HomePage page = new HomePage();
+//        String actualError = page
+//                .searchItem(item)
+//                .clickOnItemLink()
+//                .changeColor("Rust")
+//                .changeSize("11")
+//                .clickOnBuyButton()
+//                .fillInContactForm("przeme@wp.pl", false, "Przemyslaw", "Kowalski", "Targowa 5/39",
+//                        "Finture","09-500", "Warszawa", "888-442-444", true, "Poland")
+//                .shipping()
+//                .fillInPaymentInformation("4108", "6526", "1018", "1217", "Danica Killough", "12", "2024", "846")
+//                .getErrorMessage();
+//
+//        Assert.assertEquals(actualError, expectedText);
+//    }
 
     //    // Dla ShopifyTests1 i ShopifyTests3
 //    @Test

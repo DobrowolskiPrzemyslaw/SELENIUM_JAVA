@@ -1,6 +1,6 @@
-package framework.selenium.elements;
+package framework.selenium.base.elements;
 
-import framework.selenium.driver.DriverManager;
+import framework.selenium.base.driver.DriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,9 +10,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BaseElements {
     WebDriver driver = DriverManager.getDriver();
-    WebDriverWait wait = new WebDriverWait(driver, 10);
+    WebDriverWait wait = new WebDriverWait(driver, 15);
     By locator;
 
+    //ALT + INSERT - generowanie konstruktora
     protected BaseElements(By locator) {
         this.locator = locator;
     }

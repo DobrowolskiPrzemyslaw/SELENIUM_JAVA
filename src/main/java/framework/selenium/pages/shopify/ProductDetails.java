@@ -1,8 +1,7 @@
-package seleniumB2B.pages;
+package framework.selenium.pages.shopify;
 
-import framework.selenium.elements.Button;
-import framework.selenium.elements.SelectBox;
-import seleniumB2B.elements.*;
+import framework.selenium.base.elements.Button;
+import framework.selenium.base.elements.SelectBox;
 import org.openqa.selenium.By;
 
 public class ProductDetails {
@@ -27,7 +26,7 @@ public class ProductDetails {
     }
 
     public PurchasePage clickOnBuyButton (){
-        buyButton.clickOnElement();
+        buyButton.click();
         return new PurchasePage();
     }
 }
