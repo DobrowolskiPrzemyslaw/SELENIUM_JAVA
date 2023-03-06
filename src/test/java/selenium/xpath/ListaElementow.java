@@ -8,7 +8,7 @@ import selenium.baseTests.BaseTest;
 
 import java.util.List;
 
-public class ZwrotListy extends BaseTest {
+public class ListaElementow extends BaseTest {
     WebDriver driver;
 
     @Test

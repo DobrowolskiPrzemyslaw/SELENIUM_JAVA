@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
-public class Id_Class_Name_Tag_Link {
+public class Ids_Classes_Names_Tags_Links {
     //    http://pragmatictestlabs.com/2021/01/05/mastering-css-for-selenium-test-automation-2/
     //    http://cssify.appspot.com/
     WebDriver driver;

@@ -7,8 +7,7 @@ import selenium.baseTests.BaseTest;
 
 public class PoWartosciAtrybutu extends BaseTest {
     WebDriver driver;
-
-    @Test
+    @Test // LEPSZY CSS !!!
     public void wartosc_atrybutu(){
         driver.get("https://testeroprogramowania.github.io/selenium/basics.html");
         driver.findElement(By.xpath("//button[@id='clickOnMe']"));                                               // zwraca wszystkie buttony, ktorych id jest rowne clickOnMe
@@ -21,19 +20,5 @@ public class PoWartosciAtrybutu extends BaseTest {
         driver.findElement(By.xpath("//*[starts-with(@name,'fna')]"));                                           // zwraca wszystkie elementy, ktorych name zaczyna sie ciagn znakow fna
         driver.findElement(By.xpath("//*[not(starts-with(@name,'fnas'))]"));                                     // zwraca wszystkie elementy, ktorych name nie zaczyna sie ciagm znakow fnas
         driver.findElement(By.xpath("//*[substring(@name,string-length(@name)-string-length('ame')+1)='ame']")); // to samo co //*[ends-with(@name,'ame" dla starszej wersji xpatha
-    }
-
-    @Test
-    public void or(){
-        driver.get("https://testeroprogramowania.github.io/selenium/basics.html");
-        driver.findElement(By.xpath("//input | //div"));                            // zwraca wszystkie inputy lub divy
-        driver.findElement(By.xpath("//input | //div//a"));                         // zwraca wszystkie inputy lub divy z linkiem/tagie a
-        driver.findElement(By.xpath("//input[@name='fname' or @id='fname']"));      // zwraca wszystkie inputy, ktore posiadaja name lub id rowny fname
-    }
-
-    @Test
-    public void and(){
-        driver.get("https://testeroprogramowania.github.io/selenium/basics.html");
-        driver.findElement(By.xpath("//input[@name='fname' and @id='fname']"));     // zwraca wszystkie inputy, ktore posiadaja name i id rowny fname
     }
 }
