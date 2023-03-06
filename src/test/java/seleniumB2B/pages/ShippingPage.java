@@ -1,5 +1,6 @@
 package seleniumB2B.pages;
 
+import framework.selenium.elements.Button;
 import seleniumB2B.elements.*;
 import org.openqa.selenium.By;
 

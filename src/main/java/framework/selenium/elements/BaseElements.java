@@ -1,6 +1,6 @@
-package seleniumB2B.elements;
+package framework.selenium.elements;
 
-import seleniumB2B.driver.DriverManager;
+import framework.selenium.driver.DriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

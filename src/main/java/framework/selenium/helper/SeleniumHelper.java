@@ -1,4 +1,4 @@
-package seleniumB2B.helper;
+package framework.selenium.helper;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;

@@ -1,4 +1,4 @@
-package seleniumB2B.helper;
+package framework.selenium.helper;
 
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.openxml4j.opc.OPCPackage;

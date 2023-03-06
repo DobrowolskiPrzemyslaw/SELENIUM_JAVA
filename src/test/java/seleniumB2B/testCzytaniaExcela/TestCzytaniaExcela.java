@@ -1,6 +1,6 @@
 package seleniumB2B.testCzytaniaExcela;
 
-import seleniumB2B.helper.ExcelReader;
+import framework.selenium.helper.ExcelReader;
 import java.io.File;
 import java.io.IOException;
 

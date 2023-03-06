@@ -1,4 +1,4 @@
-package seleniumB2B.driver;
+package framework.selenium.driver;
 
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;

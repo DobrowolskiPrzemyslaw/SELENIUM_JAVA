@@ -1,4 +1,4 @@
-package seleniumB2B.elements;
+package framework.selenium.elements;
 
 import org.openqa.selenium.By;
 

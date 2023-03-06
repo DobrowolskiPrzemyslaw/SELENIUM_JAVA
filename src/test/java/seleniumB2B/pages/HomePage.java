@@ -1,8 +1,8 @@
 package seleniumB2B.pages;
 
-import seleniumB2B.elements.Button;
-import seleniumB2B.elements.InputTextBox;
-import seleniumB2B.elements.Link;
+import framework.selenium.elements.Button;
+import framework.selenium.elements.InputTextBox;
+import framework.selenium.elements.Link;
 import org.openqa.selenium.By;
 
 public class HomePage {
