@@ -1,6 +1,6 @@
-package seleniumB2B.baseTests;
+package selenium.baseTests;
 
-import seleniumB2B.driver.DriverManager;
+import selenium.DriverManager;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
