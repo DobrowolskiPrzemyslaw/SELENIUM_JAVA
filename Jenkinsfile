@@ -1,7 +1,7 @@
 pipeline {
     agent any
     parameters {
-        string defaultValue: 'master', description: 'Wprowadź nazwę brancha', name: 'BRANCH', trim: true
+        string defaultValue: 'jenkins', description: 'Wprowadź nazwę brancha', name: 'BRANCH', trim: true
 
         choice choices: ['TestSuites/JenkinsTest/dwaTestyJednPoDrugim.xml', 'TestSuites/JenkinsTest/jedenTest.xml', 'TestSuites/JenkinsTest/jedenTest_withParameters.xml', 'TestSuites/JenkinsTest/wszystkieTestyzKlasyxml'], description: 'Wybierz suit do uruchomienia', name: 'SUITE'
 
