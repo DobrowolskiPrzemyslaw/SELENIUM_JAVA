@@ -1,4 +1,4 @@
-package seleniumZbiorWiedzy.sprawdzenieStanuElementu;
+package testCases;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
@@ -21,8 +21,8 @@ public class StanyElementow {
         System.out.println(czyIstniej2(By.tagName("p")));
         System.out.println(czyIstniej2(By.id("topSecret")));
 
-        System.out.println(czyIstniej3(By.tagName("p")));
-        System.out.println(czyIstniej3(By.id("topSecret")));
+        System.out.println(czyIstniej(By.tagName("p")));
+        System.out.println(czyIstniej(By.id("topSecret")));
     }
 
     @Test
@@ -57,7 +57,7 @@ public class StanyElementow {
         System.out.println(driver.findElement(By.cssSelector("[type='checkbox']")).isSelected());   //TRUE JESLI element jest zaznaczony
     }
 
-    public boolean czyIstniej2(By locator){
+    public boolean czyIstniej(By locator){
         try{
             driver.findElement(locator);
             return true;
@@ -67,7 +67,7 @@ public class StanyElementow {
     }
 
     // dla listy elementow
-    public boolean czyIstniej3(By locator){
+    public boolean czyIstniej2(By locator){
         return driver.findElements(locator).size() > 0 ;
     }
 

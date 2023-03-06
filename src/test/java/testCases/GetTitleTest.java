@@ -7,7 +7,6 @@ import org.apache.logging.log4j.Logger;
 import org.testng.annotations.Test;
 
 public class GetTitleTest extends BaseTest {
-
     private static final Logger logger = LogManager.getLogger(GetTitleTest.class);
 
     @Test

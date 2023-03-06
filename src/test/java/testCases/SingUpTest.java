@@ -1,7 +1,7 @@
 package testCases;
 
 import base.BaseTest;
-import org.apache.commons.lang.RandomStringUtils;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import static pages.Homepage.*;
