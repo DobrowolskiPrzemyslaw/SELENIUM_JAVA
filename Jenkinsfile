@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Download code') {
             steps {
-                git branch: '${BRANCH}', url: 'git@github.com:DobrowolskiPrzemyslaw/selenium_phptravel.git'
+                git branch: '${BRANCH}', url: 'git@github.com:DobrowolskiPrzemyslaw/SELENIUM_JAVA.git'
             }
         }
         stage('Compile App') {
@@ -21,7 +21,7 @@ pipeline {
         }
         stage('Deploy to test env') {
             steps {
-                echo 'Deployubg to test env'
+                echo 'Deploying to test env'
             }
         }
         stage('Run UI tests on test env') {
