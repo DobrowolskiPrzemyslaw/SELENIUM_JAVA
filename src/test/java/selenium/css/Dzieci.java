@@ -15,12 +15,10 @@ public class Dzieci {
         driver.get("https://testeroprogramowania.github.io/selenium/basics.html");
         driver.findElement(By.cssSelector("div ul"));               // działa jak xpath //div//ul
         driver.findElement(By.cssSelector("tbody > tr"));           // działa jak xpath //tbody/tr
-        driver.findElement(By.cssSelector("li:first-child"));       // zwraca pierwsze dziecko tagu li
+        driver.findElement(By.cssSelector("tbody > *"));            // działa jak xpath //tbody/tr
+        driver.findElement(By.cssSelector("li:first-child"));       // zwraca pierwsze dziecko tagu li (jak xpath //tbody/tr)
         driver.findElement(By.cssSelector("li:last-child"));        // zwraca ostatnie dziecko tagu li
         driver.findElement(By.cssSelector("li:nth-child(2)"));      // zwraca ente dziecko tagu li
-//        TODO first child
-//        driver.findElement(By.cssSelector("CSS-of-Parent>Element"));
-//        driver.findElement(By.cssSelector("CSS-of-Parent>*"));
 //        TODO last child
 //        driver.findElement(By.cssSelector("CSS-of-Context-Element<space>tag-name"));
 //        driver.findElement(By.cssSelector("CSS-of-Context-Element tag-name"));
