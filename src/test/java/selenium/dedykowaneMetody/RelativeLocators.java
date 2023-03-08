@@ -6,8 +6,7 @@ import org.openqa.selenium.support.locators.RelativeLocator;
 import org.testng.annotations.Test;
 import selenium.DriverManager;
 import selenium.baseTests.BaseTest;
-
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
 
 public class RelativeLocators extends BaseTest {
     WebDriver driver;
@@ -15,7 +14,7 @@ public class RelativeLocators extends BaseTest {
     @Test
     public void above(){
         driver = DriverManager.getDriver();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.get("https://the-internet.herokuapp.com/upload");
         driver.findElement(RelativeLocator.with(By.tagName("input")).above(By.id("password")));
     }
@@ -23,7 +22,7 @@ public class RelativeLocators extends BaseTest {
     @Test
     public void below(){
         driver = DriverManager.getDriver();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.get("https://the-internet.herokuapp.com/upload");
         driver.findElement(RelativeLocator.with(By.tagName("input")).above(By.id("password")));
     }
@@ -31,7 +30,7 @@ public class RelativeLocators extends BaseTest {
     @Test
     public void leftOf(){
         driver = DriverManager.getDriver();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.get("https://the-internet.herokuapp.com/upload");
         driver.findElement(RelativeLocator.with(By.tagName("button")).toLeftOf(By.id("submit"));
     }
@@ -40,7 +39,7 @@ public class RelativeLocators extends BaseTest {
     @Test
     public void rightOf(){
         driver = DriverManager.getDriver();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.get("https://the-internet.herokuapp.com/upload");
         driver.findElement(RelativeLocator.with(By.tagName("button")).toRightOf(By.id("cancel")));
     }
@@ -48,7 +47,7 @@ public class RelativeLocators extends BaseTest {
     @Test
     public void near(){
         driver = DriverManager.getDriver();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.get("https://the-internet.herokuapp.com/upload");
         driver.findElement(RelativeLocator.with(By.tagName("input")).near(By.id("lbl-email")));
     }
@@ -56,7 +55,7 @@ public class RelativeLocators extends BaseTest {
     @Test
     public void chainingLocators(){
         driver = DriverManager.getDriver();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.get("https://the-internet.herokuapp.com/upload");
         driver.findElement(RelativeLocator.with(By.tagName("button")).below(By.id("email")).toRightOf(By.id("cancel")));
     }
