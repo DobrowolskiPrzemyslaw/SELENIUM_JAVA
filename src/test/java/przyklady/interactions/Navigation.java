@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class BrowserNavigation extends BaseTest {
+public class Navigation extends BaseTest {
     WebDriver driver;
 
     @Test

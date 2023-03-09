@@ -98,5 +98,25 @@ public class ExplicitWaitTest {
         driver.close();
     }
 
+    @Test
+    public void gdyBedzieWidoczny() {
+        WebDriverManager.firefoxdriver().setup();
+        driver = new FirefoxDriver();
+        driver.manage().window().maximize();
+        driver.get("https://testeroprogramowania.github.io/selenium/wait2.html");
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("clickOnMe"))).click();
+    }
+
+    @Test
+    public void gdyBedzieKlikalny() {
+        WebDriverManager.firefoxdriver().setup();
+        driver = new FirefoxDriver();
+        driver.manage().window().maximize();
+        driver.get("https://testeroprogramowania.github.io/selenium/wait2.html");
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("clickOnMe"))).click();
+    }
 }
