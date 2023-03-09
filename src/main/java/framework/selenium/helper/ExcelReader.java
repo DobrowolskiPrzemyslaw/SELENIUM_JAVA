@@ -83,7 +83,8 @@ public class ExcelReader {
     }
 
     // Tworzymy metodę umożliwiajaca czytanie plikow Execla - dla plików .xls (dla @DataProvider)
-    public static Object[][] readExcelFile4(File file) throws IOException {
+    public static Object[][] readExcelFile4(String excelFilePath) throws IOException {
+        File file = new File(excelFilePath);
         InputStream inputStream = new FileInputStream(file);
         HSSFWorkbook wordbook = new HSSFWorkbook(inputStream);
         Sheet sheet = wordbook.getSheetAt(0);
