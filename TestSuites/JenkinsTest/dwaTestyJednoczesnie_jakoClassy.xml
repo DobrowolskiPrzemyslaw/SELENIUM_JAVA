@@ -4,14 +4,14 @@
 <suite name="Zestaw testów Shopify E2E" parallel="classes" thread-count="2">
     <test name="Test E2E 1">
         <classes>
-            <class name="testCases.ListenerTest">
+            <class name="testNG.UruchamianieTestowzXml">
                 <methods>
-                    <include name="succesTest"/>
+                    <include name="test"/>
                 </methods>
             </class>
-            <class name="testCases.ListenerTest">
+            <class name="testNG.UruchamianieTestowzXml">
                 <methods>
-                    <include name="failureTest"/>
+                    <include name="test2"/>
                 </methods>
             </class>
         </classes>

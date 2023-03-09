@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <!-- uruchmienie dwóch testów jednocześnie jako metod -->
-
-<suite name="Zestaw testów Shopify E2E" parallel="methods" thread-count="2">
+<suite name="Przykladowe uruchomienie testow z XML" parallel="methods" thread-count="2">
     <test name="Test E2E 1">
         <classes>
-            <class name="przyklady.sprawdzenieStanuElementu.ImageTest">
+            <class name="testNG.UruchamianieTestowzXml">
                 <methods>
-                    <include name="sprawdzenieCzyObrazekPoprawnieSieZalogowal"/>
+                    <include name="test"/>
                 </methods>
             </class>
         </classes>
     </test>
     <test name="Test E2E 2">
         <classes>
-            <class name="przyklady.sprawdzenieStanuElementu.ImageTest">
+            <class name="testNG.UruchamianieTestowzXml">
                 <methods>
-                    <include name="sprawdzenieCzyObrazekPoprawnieSieZalogowal"/>
+                    <include name="test2"/>
                 </methods>
             </class>
         </classes>

@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<!-- uruchmienie dwóch testów jeden po drugim z roznych klas-->
+<!-- uruchmienie dwóch testów jednocześnie jako metod -->
 <suite name="Zestaw testów Shopify E2E">
     <test name="Test E2E 1">
         <classes>
-            <class name="testNG.UruchamianieTestowzXml">
+            <class name="testNG.UruchamianieTestowzXml_zParametrami">
                 <methods>
+                    <parameter name="par" value="parametr 1"></parameter>
+                    <parameter name="par2" value="parametr 2"></parameter>
                     <include name="test"/>
-                </methods>
-            </class>
-            <class name="testNG.UruchamianieTestowzXml">
-                <methods>
-                    <include name="test3"/>
                 </methods>
             </class>
         </classes>

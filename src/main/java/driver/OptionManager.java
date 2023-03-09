@@ -3,7 +3,6 @@ package driver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
-
 import java.util.HashMap;
 import java.util.Map;
 
