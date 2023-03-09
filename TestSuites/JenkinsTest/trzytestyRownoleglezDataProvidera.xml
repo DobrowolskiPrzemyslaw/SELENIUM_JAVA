@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!-- uruchmienie dwóch testów jednocześnie jako metod -->
+<suite name="Zestaw testów Shopify E2E" parallel="tests" thread-count="3" data-provider-thread-count="3">
+    <test name="Test E2E 1">
+        <classes>
+            <class name="przyklady.dataProvider.DataProvider_Parameters_KilkaNaRaz">
+                <methods>
+                    <include name="getTitle"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
