@@ -15,8 +15,9 @@ public class ListenersTest implements ITestListener, ISuiteListener {
         String methodName = result.getMethod().getMethodName();
         String descriptions = result.getMethod().getDescription();
         System.out.println("Wystartowal test: " + methodName + "z opisem " + descriptions);
-        ExtentReportsManger.getExtentHtmlReporter("//src//main//resources//reports//index.html");
-        ExtentReports extentReporters = ExtentReportsManger.getExtentReports();
+        String pathRaports = "/src/main/resources/reports/index.html";
+        ExtentReportsManger.getExtentHtmlReporter(pathRaports);
+        ExtentReports extentReporters = ExtentReportsManger.getExtentReports(pathRaports);
         ExtentTest test = extentReporters.createTest("Wyszukiwanie hotelu test");
     }
 

@@ -4,11 +4,11 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 public class ExtentReportsManger {
-    private static ExtentHtmlReporter htmlReporter;
-    private static ExtentReports extentReporters;
+    protected static ExtentHtmlReporter htmlReporter;
+    protected static ExtentReports extentReporters;
 
-    public static ExtentReports getExtentReports() {
-        getExtentHtmlReporter("//src//main//resources//reports//index.html");
+    public static ExtentReports getExtentReports(String filePath) {
+        getExtentHtmlReporter(filePath);
         extentReporters = new ExtentReports();
         extentReporters.attachReporter(htmlReporter);
         return extentReporters;

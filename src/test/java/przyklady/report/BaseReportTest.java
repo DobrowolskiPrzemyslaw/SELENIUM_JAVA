@@ -13,8 +13,9 @@ public class BaseReportTest {
 
     @BeforeSuite
     public void beforeSuite(){
-        htmlReporter = ExtentReportsManger.getExtentHtmlReporter("//src//main//resources//reports//index.html");
-        extentReporters = ExtentReportsManger.getExtentReports();
+        String pathRaports = "/src/main/resources/reports/index.html";
+        htmlReporter = ExtentReportsManger.getExtentHtmlReporter(pathRaports);
+        extentReporters =  ExtentReportsManger.getExtentReports(pathRaports);
         extentReporters.attachReporter(htmlReporter);
     }
     @AfterSuite
