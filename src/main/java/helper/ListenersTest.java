@@ -1,14 +1,23 @@
 package helper;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import org.testng.ISuiteListener;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+import utils.raports.ExtentReportsManger;
 
-public class ListenersTest implements ITestListener {
+public class ListenersTest implements ITestListener, ISuiteListener {
 
     @Override
     public void onTestStart(final ITestResult result) {
-        System.out.println("Wystartowal test");
+        String methodName = result.getMethod().getMethodName();
+        String descriptions = result.getMethod().getDescription();
+        System.out.println("Wystartowal test: " + methodName + "z opisem " + descriptions);
+        ExtentReportsManger.getExtentHtmlReporter("//src//main//resources//reports//index.html");
+        ExtentReports extentReporters = ExtentReportsManger.getExtentReports();
+        ExtentTest test = extentReporters.createTest("Wyszukiwanie hotelu test");
     }
 
     @Override
@@ -38,11 +47,12 @@ public class ListenersTest implements ITestListener {
 
     @Override
     public void onStart(final ITestContext context) {
-
+        String suiteName = context.getName().replace(" ", "");
+        System.out.println("Wystartowalismy suitName: " + suiteName);
     }
 
     @Override
     public void onFinish(final ITestContext context) {
-
+        System.out.println("Zakonczylismy suitName: " + context);
     }
 }

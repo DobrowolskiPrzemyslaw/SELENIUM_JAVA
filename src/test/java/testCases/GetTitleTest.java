@@ -10,7 +10,7 @@ public class GetTitleTest extends BaseTest {
 
     private static final Logger logger = LogManager.getLogger(GetTitleTest.class);
 
-    @Test
+    @Test(description = "Opis testu")
     public void getTitle(){
         driver.get("http://www.kurs-selenium.pl/demo/");
         SeleniumHelper.assertWithLogInfo(logger,"PHPTRAVELS | Travel Technology Partner", driver.getTitle());

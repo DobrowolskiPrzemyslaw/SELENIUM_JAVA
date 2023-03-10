@@ -6,7 +6,7 @@
         <classes>
             <class name="testCases.HotelSearchTest">
                 <methods>
-                    <include name="sortNameOfHotels"/>
+                    <include name="sortNameOfHotels" description="To jest opis z testNG"/>
                 </methods>
             </class>
         </classes>

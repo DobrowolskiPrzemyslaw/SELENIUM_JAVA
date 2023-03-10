@@ -4,6 +4,7 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
+import utils.raports.ExtentReportsManger;
 
 public class BaseReportTest {
     protected WebDriver driver;
@@ -12,14 +13,14 @@ public class BaseReportTest {
 
     @BeforeSuite
     public void beforeSuite(){
-        htmlReporter = new ExtentHtmlReporter("index.html"); //inicjalizacja miejsca na raporty
-        extentReporters = new ExtentReports();                      //inicjalizacja reportera dla testu
-        extentReporters.attachReporter(htmlReporter);               //dodanie raportow do miejsca naraporty
+        htmlReporter = ExtentReportsManger.getExtentHtmlReporter("//src//main//resources//reports//index.html");
+        extentReporters = ExtentReportsManger.getExtentReports();
+        extentReporters.attachReporter(htmlReporter);
     }
     @AfterSuite
     public void afterSuite(){
-        htmlReporter.flush();                                       //zamkniecie dzialanie
-        extentReporters.flush();                                    //zamkniecie dzialania
+        htmlReporter.flush();
+        extentReporters.flush();
     }
 
     @BeforeMethod
